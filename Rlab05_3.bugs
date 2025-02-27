@@ -1,0 +1,8 @@
+model {
+    for (i in 1:length(X)) {
+        X[i] ~ dnorm(mu, 1/sigma^2);
+    }
+    mu ~ dunif(-10, 10);
+    sigma ~ dunif(0, 50);
+    ms = mu / sigma
+}

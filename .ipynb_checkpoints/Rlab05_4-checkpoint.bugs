@@ -1,0 +1,8 @@
+model {
+    for (i in 1:length(D)) {
+        V[i] ~ dnorm(b*D[i], c);
+    }
+    b ~ dunif(-10^5, 10^5);
+    sigma ~ dunif(0, 500);
+    c = 1/sigma^2
+}
